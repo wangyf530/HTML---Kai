@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {
+            background-color: aliceblue;
+            width: 50%;
+            height: 30px;
+            /* vh 高度 viewpoint height */
+            /* height: 90vh; */
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 1px solid black;
+            /*折疊 每個框中間沒有空白*/
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <!-- table row -->
+        <tr>
+            <!-- table data / table column -->
+            <td> 1 </td>
+            <td> 2 </td>
+            <td> 3 </td>
+        </tr>
+    </table>
+    <p>&nbsp;</p>
+    <hr>
+    </hr>
+    <p>&nbsp;</p>
+
+
+    <table>
+
+        <tr>
+            <!-- 
+            colspan - 兩個columns合併 --- 左右
+            rowspan - 兩個rows合併 --- 上下
+             -->
+            <td colspan="2"> 1 </td>
+            <!-- <td> 2 </td> -->
+            <td> 3 </td>
+        </tr>
+        <tr>
+            <td> 4 </td>
+            <td> 5 </td>
+            <td rowspan="2"> 6 </td>
+        </tr>
+        <tr>
+            <td> 7 </td>
+            <td> 8 </td>
+            <!-- <td> 9 </td> -->
+        </tr>
+    </table>
+
+
+</body>
+
+</html>

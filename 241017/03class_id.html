@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. class id</title>
+    <style>
+        /* class寫法
+        1. .class-name
+        2. 命名不可以用數字開頭，.123不行 .a123可以
+        3. 有區分大小寫，.mycolor 跟 .myColor 不同
+        4. 可以用中文命名，但不建議 */
+        .mycolor {
+            color: deepskyblue;
+        }
+
+        /* 畫一個相同寬高的盒子，但背景色不同 */
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: lightgreen;
+        }
+
+        .bg-color1 {
+            background-color: lightgreen;
+        }
+
+        .bg-color2 {
+            background-color: lightcoral;
+        }
+
+        .bg-color3 {
+            background-color: lightskyblue;
+        }
+
+        #main {
+            width: 1024px;
+            height: 768px;
+            border: 1px solid #000;
+        }
+
+        #header {
+            width: 1024px;
+            height: 100px;
+            background-color: lightblue;
+        }
+
+        #left {
+            width: 100px;
+            height: 568px;
+            background-color: lightgreen;
+            /* 浮動左側 <- only左右可選*/
+            float: left;
+        }
+
+        #right {
+            width: 924px;
+            height: 568px;
+            background-color: lightcoral;
+            /* 浮動右側 */
+            float: right;
+        }
+
+        #footer {
+            width: 1024px;
+            height: 100px;
+            background-color: lemonchiffon;
+            /* 清除浮動 */
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- class and id selector -->
+    <h1> CSS的選擇器 </h1>
+    <p>CSS有非常多選擇器，幫我們在撰寫樣式時，選擇到我們要的目標</p>
+
+    <h1 class="mycolor">Class 選擇器</h1>
+    <p class="mycolor">特性:具有重複使用的特性，是使用率最高的選擇器</p>
+    <a class="mycolor" href="#">超連結</a>
+
+    <p>特性2:</p>
+    <p> 抽離相同的屬性寫成 class 重複使用，再對不一樣的屬性定義 class</p>
+    <p> ** class 是可以一直增加的 例如 box bg-color1 ....</p>
+    <!-- emmet打法 .box -->
+    <div class="box bg-color1"></div>
+    <br>
+    <div class="box bg-color2"></div>
+    <br>
+    <div class="box bg-color3"></div>
+    <br>
+
+    <h1> id 選擇器</h1>
+    <p> 一份文件裡面，只允許一個獨一無二的id，就像身分證不能重複 </p>
+    <p> 對元素(標籤)設定 id，可以用城市快速取得它。 </p>
+
+    <h2> 網頁區塊名稱會用 id 來命名 </h2>
+    <!-- 命名候用id來做排版 -->
+    <!-- #main -->
+    <div id="main">
+        <div id="header"></div>
+        <div id="left"></div>
+        <div id="right"></div>
+        <div id="footer"></div>
+    </div>
+
+    <h2>對元素(標籤)設定 id</h2>
+    <button id="btn">按鈕</button>
+
+    <script>
+        // 用程式取得id
+        const btn = document.getElementById('btn')
+        // 讓按鈕被點擊時,跳出視窗
+        btn.onclick = function () {
+            alert('Hello World')
+        }
+    </script>
+
+
+
+</body>
+
+</html>

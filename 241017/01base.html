@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>241017</title>
+    <!-- 第二種方式使用 link 適合用於開發網站 -->
+    <link rel="stylesheet" href="./style1.css">
+    <!-- 第一種使用 style 標籤樣式，該文件的專屬樣式 -->
+    <style>
+        /* 選擇器 {
+            屬性:值}; */
+        /* 標籤選擇器h1 */
+        h1 {
+            color: red;
+            background-color: yellow;
+        }
+
+        p {
+            font-size: 30px;
+            color: green;
+        }
+
+        /* 群組選擇器 */
+        /* h1顏色被覆蓋 紅->藍 */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 第三種 行內模式(inline tyle)，標籤的專屬模式,優先等級最高 -->
+    <h1 style="color: deeppink;">title 1</h1>
+    <!-- lorem 假字 +數字會產生固定字數 -->
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias consectetur, repellat, nemo eligendi quisquam
+        deleniti aut vel corporis quasi a sint animi ipsa? Quos ut laboriosam pariatur asperiores autem est.</p>
+
+    <h1>title 2</h1>
+    <!-- lorem 假字 +數字會產生固定字數 -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate enim deleniti officiis eligendi ex
+        repellendus corporis, ratione, quaerat soluta omnis distinctio dolorum doloribus. Earum fugit excepturi
+        doloribus repellat, alias adipisci.</p>
+
+    <h1>title 3</h1>
+    <!-- lorem 假字 +數字會產生固定字數 -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam labore vitae sit quam consequuntur perferendis
+        unde provident eaque nobis ex aperiam harum, veritatis, non totam mollitia vel dolorem ipsam ratione.</p>
+
+    <hr>
+    <!-- <br>
+    只輸入img ===> <img src="" alt="">
+    <input -->
+
+    <h1>Hello World</h1>
+    <h2>Hello World</h2>
+    <h3>Hello World</h3>
+    <h4>Hello World</h4>
+    <h5>Hello World</h5>
+    <h6>Hello World</h6>
+
+
+</body>
+
+</html>

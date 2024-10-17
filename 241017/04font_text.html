@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font text</title>
+    <!-- google 字型 -->
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Kablammo&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            /* 對整份文件文字做設定 */
+            font-family: "Edu AU VIC WA NT Guides", cursive, '微軟正黑體';
+        }
+
+        /* 對局部文字做設定 */
+        .font-style {
+            /* 單位可以是 px rem em... */
+            font-size: 30px;
+            /* 設定斜體 */
+            font-style: italic;
+            /* 設定粗體 */
+            font-weight: bolder;
+            /* 字型家族 */
+            /* 如果使用者的系統有第一個字型就使用，若無就用第二個，以此類推 */
+            font-family: '微軟正黑體', Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        /* 2. 設定google 字型的font-family */
+        .google-font {
+            font-family: "Londrina Solid", sans-serif;
+            font-size: 34px;
+            font-style: italic;
+        }
+
+        .text-style {
+            font-family: "Kablammo", system-ui;
+            font-size: 28px;
+            /* tac = 文字置中 (還有left right可選) */
+            /* text-align: center; */
+            text-align: left;
+            /* tdu = 加底線 , overlibe, line-through*/
+            text-decoration: underline;
+            /* 第一行文字的縮排 */
+            text-indent: 100px;
+            /* 每個字母的間隔 (標點符號不受影響) */
+            letter-spacing: 10px;
+            /* 每個單詞之間的間隔，中文字比較難用到這個屬性(字中間無空格) */
+            word-spacing: 20px;
+            /* 行高，可以設定單位值，也可以設定倍數(無單位) */
+            line-height: 50px;
+            /* line-height: 2; */
+        }
+    </style>
+</head>
+
+<body>
+    <h1> 1. Font 樣式設定</h1>
+    <div class="font-style">
+        星期四
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis sed eveniet voluptatibus natus eum magni sequi
+        cupiditate odio repellendus delectus.
+    </div>
+
+    <h1> 2. google font</h1>
+    <div class="google-font">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, eligendi!
+    </div>
+
+    <h1> 3. Text 樣式設定</h1>
+    <p class="text-style">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis quae necessitatibus
+        officiis molestiae neque cum debitis fugiat voluptate sint magnam error numquam aperiam expedita aliquam
+        quaerat, ut minima amet ea.</p>
+</body>
+
+</html>

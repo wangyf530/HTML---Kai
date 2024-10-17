@@ -69,6 +69,30 @@
             /* 清除浮動 */
             clear: both;
         }
+
+        /* 主流排版 display:flxe 彈性盒 flexbox */
+        /* 後代選擇器 nav下面所有的p都要藍色 */
+        nav p {
+            color: blue;
+        }
+
+        /* 子代選擇器 只有nav下一層的p(兒子們)才會變色 孫子輩不會變色*/
+        nav>p {
+            color: red;
+        }
+
+        /* inline style > ID > Class > Element > * */
+        /*element = 0.0.0.1  
+        only 1 ul so it's fine to use this. If have more than 1 ul, be careful */
+        ul>li {
+            color: violet;
+        }
+
+        /* class = 0.0.1.0 
+        class has higher priority than ul/li, so will overlap last line whose name is list-item under menu */
+        .menu>.list-item {
+            color: blueviolet;
+        }
     </style>
 </head>
 
@@ -109,6 +133,53 @@
     <h2>對元素(標籤)設定 id</h2>
     <button id="btn">按鈕</button>
 
+    <hr>
+
+    <h1>後代與子代選擇器</h1>
+    <nav> <!-- 爸爸 -->
+        <p>Lorem ipsum dolor sit.</p> <!-- 大兒子 -->
+        <div> <!-- 小兒子 -->
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore, minus!</p> <!-- 小兒子的兒子 -->
+        </div>
+    </nav>
+
+    <hr>
+
+    <!-- ul<li*5 -->
+    <ul class="menu">
+        <li class="list-item">item</li>
+        <li class="list-item">item</li>
+        <li class="list-item">item</li>
+        <li class="list-item">item</li>
+        <li class="list-item">item</li>
+    </ul>
+
+    <ul>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+    </ul>
+
+    <!-- table>tr*3>td*4 -->
+    <!-- table>tr*2>td{item$}*4 -->
+    <table>
+        <tr>
+            <td>item1</td>
+            <td>item2</td>
+            <td>item3</td>
+            <td>item4</td>
+        </tr>
+        <tr>
+            <td>item1</td>
+            <td>item2</td>
+            <td>item3</td>
+            <td>item4</td>
+        </tr>
+    </table>
+
+
     <script>
         // 用程式取得id
         const btn = document.getElementById('btn')
@@ -118,7 +189,10 @@
         }
     </script>
 
-
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
 
 </body>
 

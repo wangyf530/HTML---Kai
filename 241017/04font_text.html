@@ -9,15 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap"
         rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&display=swap"
-        rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Kablammo&display=swap" rel="stylesheet">
 
     <style>
+        .root {}
+
         body {
             /* 對整份文件文字做設定 */
-            font-family: "Edu AU VIC WA NT Guides", cursive, '微軟正黑體';
+            font-family: "Londrina Solid", sans-serif, '微軟正黑體';
         }
 
         /* 對局部文字做設定 */
@@ -41,6 +41,7 @@
             font-style: italic;
         }
 
+        /* 3. text樣式設定 */
         .text-style {
             font-family: "Kablammo", system-ui;
             font-size: 28px;
@@ -59,6 +60,20 @@
             line-height: 50px;
             /* line-height: 2; */
         }
+
+        .text-shadow {
+            font-size: 100px;
+            /* 第一個；水平位移 (+為左，-為右)
+            第二個；垂直位移 (+為下，-為上) 
+            第三個；陰影的模糊半徑
+            第四個；顏色*/
+            text-shadow:
+                10px 30px 5px rgba(255, 0, 0, 0.5),
+                /* 多重陰影 用逗點隔開 */
+                -10px -30px 5px rgba(255, 0, 0, 0.5);
+        }
+
+        /* css generator 產生器 can preview and copy paste later */
     </style>
 </head>
 
@@ -79,6 +94,36 @@
     <p class="text-style">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis quae necessitatibus
         officiis molestiae neque cum debitis fugiat voluptate sint magnam error numquam aperiam expedita aliquam
         quaerat, ut minima amet ea.</p>
+
+    <h1> 4. 文字陰影 </h1>
+    <p class="text-shadow"> PHP is the best! </p>
+
+    <h1> 5. rem 與 em 差異 </h1>
+    <h2>rem</h2>
+    <p>為root預設，font-size的倍數，預設為16px </p>
+    <p>:root 選擇器，指的是根元素 html</p>
+    <div style="font-size: 1rem;">
+        font
+        <div style="font-size: 2rem;">
+            font
+            <!-- 倍數 1rem=16 3rem=48 -->
+            <div style="font-size: 3rem;"> font </div>
+        </div>
+    </div>
+
+    <h2>em</h2>
+    <p> 可能為父層or祖先層font-size 的倍數 </p>
+    <p>父層若有設定文字尺寸則以它為主，沒有就會繼續往外找。</p>
+    <!-- 找上一層,沒有,默認16px -->
+    <div style="font-size: 1em;">
+        font
+        <!-- 2*16=32 -->
+        <div style="font-size: 2em;">
+            font
+            <!-- 2em是32 3*32=96px -->
+            <div style="font-size: 3em;"> font </div>
+        </div>
+    </div>
 </body>
 
 </html>

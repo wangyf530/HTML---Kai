@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> float </title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        /* float 可以把東西飄起來 讓東西往那個方向靠龍
+        會讓浮起來的東西變成區塊元素 */
+        .left{
+            float: left;
+        }
+
+        .right{
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- float 的元素不會被計入高度 -->
+        <!-- 都 float 的話都沒有高度 -->
+        <div class="box left"></div>
+        <!-- float 會把元素變成 display block -->
+        <span class="left" style="width: 50px;">span will be transformed to block.</span>
+        <div class="box left"></div>
+        <!-- 會往視窗最右邊放 -->
+        <div class="box right"></div>
+        <!-- 遇到結尾自動換行 -->
+        <p>float text in the container! text in the container! text in the container! text in the container!</p>
+        <!-- 預設其他東西圍繞漂浮的元素，可以使用 clear　清除浮動，排在浮動的元素下一行（要用block) -->
+        <p style="clear: both;"> float 容器內的 clear 文字，float 內的文字</p>
+    </div>
+    <p>text outside the container!</p>
+    
+    <hr>
+    
+    <!-- 在漂浮的外層容器加上 overflow:hidden 可以讓漂浮的元素被算入高度 -->
+    <div style="overflow: hidden;">
+        <div class="box left"></div>
+        <div class="box left"></div>
+        <div class="box left"></div>
+    </div>
+    <p>text outside the container!</p>
+
+
+</body>
+</html>

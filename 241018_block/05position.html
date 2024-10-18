@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Position </title>
+    <style>
+        body{
+            /* 調整資料走向 影響 position:relative 左右的判定 */
+            /* direction:rtl; 從右開始
+            direction: ltr; */
+            height: 3000px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        #relative {
+            /* 
+            top/left/right/bottom 距離原本的位置進行偏移 
+            left right 同時設定時，會依照資料走向為主
+            top bottom 同時設定時，會以 top 為主
+            */
+            left: 20px;
+            /* relative 相對於原本位置偏移 */
+            position:relative;
+        }
+
+        #absolute-out{
+            width: 200px;
+            height: 200px;
+            background:skyblue;
+            /* 原本 in 的上層是 out,但是 out 沒有加 relative，所以會根據上面的 relative 去進行偏移 */
+            position: relative;
+        }
+
+        #absolute-in{
+            /* absolute 相對於上層 relative 位置偏移，都沒有就是 body */
+            position: absolute;
+            /* 如果元素沒設定寬高(把下面的class="box"去掉) 可以利用 top bottom right left 拉伸撐開元素 */
+            top: 50px;
+            bottom:50px;
+            left: 50px;
+            right: 50px;
+            /* 有寬高時，偏移方式跟 relative 相同 */
+            /* width: 100px;
+            height: 100px; */
+            background: coral;
+        }
+
+        #fixed{
+            /* fixed 相對於瀏覽器視窗的位置 */
+            /* 固定在頁面右下角 */
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: pink;
+        }
+
+        #sticky {
+            position: sticky;
+            background: lightcyan;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>relative</h1>
+    <div id="relative" class="box"> relative </div>
+    <h1>in and out</h1>
+    <div id="absolute-out" class="box"> absolute-out
+        <!-- <div id="absolute-in" class="box"> absolute-in</div> -->
+        <div id="absolute-in"> absolute-in</div>
+    </div>
+    <div id="fixed" class="box"> fixed</div>
+    <div id="sticky" class="box"> sticky</div>
+</body>
+
+</html>

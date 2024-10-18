@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card</title>
+    <style>
+        body{
+            height: 1000px;
+        }
+        .card {
+            margin:20px;
+            width: 250px;
+            border: 1px solid black;
+            padding: 10px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .card-ribbon {
+            position: absolute;
+            top: -18px;
+            left: -18px;
+        }
+
+        .card-img{
+            /* 跟 box 一樣寬 */
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="./ribbon.png" class="card-ribbon">
+        <img src="./images.jpg" alt="" class="card-img">
+        <p style="background: skyblue; text-align: center;"> Nothing Phone (2)</p>
+        <p>$15,900</p>
+    </div>
+    
+</body>
+</html>

@@ -26,8 +26,23 @@
             text-decoration: overline underline;
         }
 
-        p {
-            line-height: 10em;
+        .inline-block {
+            font-size: 15px;
+            width: 100px;
+            height: 100px;
+            background: pink;
+            /* 
+            display 修改元素的顯示方式
+            none：不顯示
+            inline-block：外在排列和 inline 相同， 一起占一行
+                        內部排列和 block 相同 可以置中對齊
+            */
+            display: inline-block;
+            text-align: center;
+        }
+
+        .inline-block:not(:first-child) {
+           margin-left: -4px;
         }
     </style>
 </head>
@@ -35,14 +50,29 @@
 <body>
     <!-- 外在表現方式 內在排列方式
      外部一行 or 排一起 -->
+    <h1> 上午 </h1>
     <a href="https://x.com">x.com</a>
-    <p>
+    <p style="line-height: 5em">
         <span>AAAAAA</span>
         <img src=" https://picsum.photos/30/30" alt="">
     </p>
     <span>bbbbb</span>
     <span>ccccc</span>
-    <div style="height: 30px; line-height: 30px; border: 1px solid black;"> aaa </div>
+    <hr>
+    <div style="height: 30px; line-height: 30px; background-color: grey;border: 1px solid black; font-size: 30px;"> aaa </div>
+    <p>&nbsp</p>
+    <hr>
+    <p>&nbsp</p>
+    <h1>下午</h1>
+    <!-- 默認有一個間距 如果放在同一行就會貼在一起 -->
+    <div>
+    <div class="inline-block">inline-block</div>
+    <div class="inline-block">inline-block</div>
+    <div class="inline-block">inline-block</div>
+    </div>
+
+    <p>&nbsp</p>
+    <p>&nbsp</p>
 </body>
 
 </html>

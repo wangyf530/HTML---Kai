@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 外層必須要設定高度，內層的%才有效 */
+        #vw {
+            /* vw=視窗寬度 50vw=50%的窗口寬度，會隨著窗口大小變化 */
+            width: 50vw;
+            height: 100px;
+            background: coral;
+            font-size: 50px;
+            text-align: center;
+        }
+
+        #vh {
+            /* vh=視窗高度 50vw=50%的窗口高度，會隨著窗口大小變化 */
+            width: 50vh;
+            height: 100px;
+            background: blue;
+            font-size: 50px;
+            color: pink;
+            text-align: center;
+        }
+
+        #vmin {
+            /* vmin = 視窗寬或高較小的一邊，會隨著窗口大小變化 100vmin=全滿*/
+            width: 50vmin;
+            height: 100px;
+            background: pink;
+            font-size: 50px;
+            text-align: center;
+        }
+
+        #vmax {
+            /* vmin = 視窗寬或高較小的一邊，會隨著窗口大小變化 100vmin=全滿*/
+            width: 50vmax;
+            height: 100px;
+            background: skyblue;
+            font-size: 50px;
+            text-align: center;
+        }
+
+        #outter {
+            width: 300px;
+            height: 300px;
+            background: orange;
+        }
+
+        #inner {
+            /* % = 外層元素大小的百分比 */
+            /* calc 不同單位的計算，但是四則運算符號前後都要有空格 */
+            /* width: 50%; */
+            width: calc(50% + 100px);
+            height: 50%;
+            background: brown;
+        }
+
+        #in2 {
+            width: 50%;
+            height: 50%;
+            background: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 沒有任何預設樣式的區塊 -->
+    <div></div>
+    <!-- #vw -->
+    <div id="vw">50vw</div>
+    <div id="vh">50vh</div>
+    <!-- 看寬高 橫版:vmax寬度 vmin高度 -->
+    <div id="vmin">vmin</div>
+    <div id="vmax">vmax</div>
+    <div id="outter">
+        <div id="inner"></div>
+        <div id="in2"></div>
+    </div>
+</body>
+
+</html>

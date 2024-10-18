@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            /* 區塊、表格內的內容對齊 */
+            text-align: center;
+            /* 
+            行內 表格的內容垂直對齊
+            top：       整行的頂部 (表格能用)
+            middle：    中間 (表格能用)
+            bottom：    整行的底部 (表格能用)
+            text-top    文字字體頂部
+            text-bottom 文字字體底部
+            super       上標
+            sub         下標
+            */
+            vertical-align: bottom;
+        }
+
+        span {
+            text-decoration: overline underline;
+        }
+
+        p {
+            line-height: 10em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 外在表現方式 內在排列方式
+     外部一行 or 排一起 -->
+    <a href="https://x.com">x.com</a>
+    <p>
+        <span>AAAAAA</span>
+        <img src=" https://picsum.photos/30/30" alt="">
+    </p>
+    <span>bbbbb</span>
+    <span>ccccc</span>
+    <div style="height: 30px; line-height: 30px; border: 1px solid black;"> aaa </div>
+</body>
+
+</html>

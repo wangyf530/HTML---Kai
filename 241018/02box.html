@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 300px;
+            height: 300px;
+            background: pink;
+            /* padding: 一次設定完
+            一個值：上下左右
+            兩個值：上下，左右
+            三個值：上，左右，下
+            四個值：上，右，下，左
+
+            padding-top/bottom/left/right; 只有上/下/左/右 */
+            padding: 10px 20px 30px 40px;
+
+            /* margin置中 左右認為 auto 可以置中 
+            右遍設為 auto 可以靠左
+            左遍設為 auto 可以靠右*/
+            margin: 10px 0 10px auto;
+
+            /* border: border-width border-style border-color */
+            /* 同時設置四個遍 */
+            border: 10px solid black;
+            /* 單獨設定一邊 */
+            border-top: 5px dotted red;
+            /* 單獨設定一邊 單獨設定一個參數 */
+            border-left-width: 10px;
+            border-left-style: dashed;
+
+            /* 不會佔元素，位置在 border 以外，從 border 開始往外算 */
+            outline: 4px solid red;
+            /* outline 外框和 border 的間距 */
+            outline-offset: 10px;
+            /* box-shadow: 10px 10px 10px green; */
+
+            /* 
+            box-sizing 控制寬高設定的範圍
+            content-box 置包含內容區(預設)
+            border-box 包含內容 padding 邊框 */
+            box-sizing: border-box;
+
+        }
+
+        #div2 {
+            width: 300px;
+            height: 300px;
+            background: skyblue;
+            font-size: 30px;
+            /* 東西超出內容區時的處理方式，
+            auto 自動
+            visible 看得到
+            hidden 隱藏
+            
+            overflow-x overflow-y 分別設定x軸根y軸的*/
+            overflow: auto;
+
+            /* margin置中 左右認為 auto 可以置中 
+            右遍設為 auto 可以靠左
+            左遍設為 auto 可以靠右*/
+            margin: 10px 0 10px 10px;
+        }
+
+        input:focus {
+            outline: 10px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    Margin：與外層元素的間距。 
+     Border：元素的邊界。 
+     Padding：元素邊界至主要內容的間距。
+     -->
+    <div id="div1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, quia!</div>
+    <hr>
+    <div id="div2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem officia, dolor inventore eum modi
+        assumenda a totam veniam expedita, ut, vero velit. Sunt commodi dolorum sed ad deleniti ex suscipit a. Autem
+        sunt perspiciatis porro sapiente fugiat. Totam distinctio reiciendis velit eos. Deserunt in rem inventore sunt
+        accusamus natus commodi?</div>
+    <input type="text" name="" id="">
+</body>
+
+</html>

@@ -1,45 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food</title>
     <style>
-        table{
-            border-collapse: collapse;
-            width: 50%;
-            text-align: center;
-            margin: auto;
-        }
-        tr,td{
-            border: 1px solid black;
-            height: 20vh;
+        body {
+            background-image: url('./bg.jpg');
         }
 
-        h3{
+        .container {
+            place-items: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            text-align: center;
+            margin: auto;
+            border-spacing: 0;
+            font-size: 30px;
+            font-weight: bold;
+            
+        }
+
+        tr,
+        td {
+            height: 20vh;
+            border-bottom: 3px solid white;
+        }
+
+        td:hover {
+            background: lightpink;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        h3 {
             text-align: center;
         }
+
+        a {
+            cursor: pointer;
+            color: white;
+
+            /* 滑鼠變為指標 */
+        }
+
+        .f1 {
+            background-image: url(./chinese.jpg);
+            width: 100%;
+            background-position: center;
+        }
+
+        .f2 {}
+
+        .f3 {}
     </style>
 
 </head>
+
 <body>
     <h3>xx大飯店</h3>
-    <table>
-        <tr>
-            <td>
-                <a href="./Floor3.html">3F</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="./Floor2.html">2F</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="./Floor1.html">1F</a>
-            </td>
-        </tr>
-    </table>
+    <div class="container">
+        <table>
+            <tr>
+                <td class="f3">
+                    <a href="./Floor3.html" title="石鍋拌飯、炒年糕、醬蟹、大醬湯...">3F - 韓國料理</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="f2">
+                    <a href="./Floor2.html" title="蛋包飯、豚骨拉麵、壽司、茶碗蒸、手卷...">2F - 日本料理</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="f1">
+                    <a href="./Floor1.html" title="酸菜魚、滷肉飯、紅燒肉、宮保雞丁...">1F - 中式料理</a>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
+
 </html>

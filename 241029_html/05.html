@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歌曲</title>
+    <style>
+        body {
+            background-color: lightcyan;
+            width: 60%;
+            text-align: center;
+            margin: auto;
+        }
+
+        .header {
+            font-weight: bolder;
+            margin: 0 20% 0 20%;
+            height: fit-content;
+            color: lightblue;
+        }
+
+        .label {
+            background: grey;
+            font-size: 16px;
+            width: fit-content;
+            text-align: center;
+            padding: 0 5px 0 5px;
+            color: white;
+        }
+
+        .item {
+            font-size: 25px;
+            color: black;
+
+        }
+
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            /* border: 1px solid black; */
+            margin: auto;
+        }
+
+        td,
+        th {
+            /* border: 1px solid black; */
+            padding: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .small {
+
+            font-size: 16px;
+            color: grey;
+        }
+
+        .big {
+            font-size: 30px;
+            color: blue;
+        }
+
+        button {
+            width: 100px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 25px;
+        }
+
+        .background, .lyric {
+            width:60%;
+            text-align: left;
+            margin: auto;
+            column-count: 2;        /* 分成兩列 */
+            column-gap: 20px;
+        }
+
+        .background:hover, .lyric:hover {
+            background-color: coral;
+        }
+
+        .donate, .share{
+            background-color: transparent;
+            border:none;
+            font-size: 25px;
+        }
+        .donate:hover, .share:hover{
+            background: mintcream;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <table>
+        <tr>
+            <div class="header">
+                <div class="label"> Music </div>
+                <p class="item" style="text-align: left;">Cruel Summer - Taylor Swift</p>
+            </div>
+        </tr>
+        <tr>
+            <td rowspan="4">
+                <iframe width="700" height="400" src="https://www.youtube.com/embed/8e5fouZNhVc?si=fOmld8aUSJ8Kj3qR"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </td>
+            <td>
+                <p class="small">已播次數 </p>
+                <p class="big">30,000,000</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="small">已售 </p>
+                <p class="big">10,000,000</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="small">上線時間 </p>
+                <p class="big">六月 13, 2023</p>
+            </td>
+        </tr>
+    </table>
+
+    <form>
+        <p>
+            <input type="button" class="donate" value=">>購買<<">
+            <input type="button" class="share" value=">>分享<<">
+            <input type="button" class="donate" value=">>歌詞<<" onclick="location.href='#lyric'">
+        <input type="button" class="share" value=">>背景<<" onclick="location.href='#background'">
+        </p>
+    </form>
+
+    <hr>
+
+    <h2>歌詞</h2>
+    <div class="lyric">
+        <span>
+            Fever dream high in the quiet of the night
+            <br>You know that I caught it
+            <br>Bad, bad boy
+            <br>Shiny toy with a price
+            <br>You know that I bought it
+            <br>Killing me slow, out the window
+            <br>I'm always waiting for you to be waiting below
+            <br>Devils roll the dice, angels roll their eyes
+            <br>What doesn't kill me makes me want you more
+            <br>And it's new, the shape of your body
+            <br>It's blue, the feeling I've got
+            <br>And it's ooh, whoa, oh
+            <br>It's a cruel summer
+            <br>It's cool, that's what I tell 'em
+            <br>No rules in breakable heaven
+            <br>But ooh, whoa oh
+            <br>It's a cruel summer
+            <br>With you
+            <br>Hang your head low
+            <br>In the glow of the vending machine
+            <br>I'm not dying
+            <br>You say that we'll just screw it up in these trying times
+            <br>We're not trying
+            <br>So cut the headlights, summer's a knife
+            <br>I'm always waiting for you just to cut to the bone
+            <br>Devils roll the dice, angels roll their eyes
+            <br>And if I bleed, you'll be the last to know
+            <br>Oh, it's new, the shape of your body
+            <br>It's blue, the feeling I've got
+            <br>And it's ooh, whoa, oh
+            <br>It's a cruel summer
+            <br>It's cool, that's what I tell 'em
+            <br>No rules in breakable heaven
+            <br>But ooh, whoa, oh
+            <br>It's a cruel summer
+            <br>With you
+            <br>I'm drunk in the back of the car
+            <br>And I cried like a baby coming home from the bar (oh)
+            <br>Said, "I'm fine, " but it wasn't true
+            <br>I don't wanna keep secrets just to keep you
+            <br>And I snuck in through the garden gate
+            <br>Every night that summer just to seal my fate (oh)
+            <br>And I screamed for whatever it's worth
+            <br>"I love you, " ain't that the worst thing you ever heard?
+            <br>He looks up grinning like a devil
+            <br>It's new, the shape of your body
+            <br>It's blue, the feeling I've got
+            <br>And it's ooh, whoa, oh
+            <br>It's a cruel summer
+            <br>It's cool, that's what I tell 'em
+            <br>No rules, in breakable heaven
+            <br>But ooh, whoa, oh
+            <br>It's a cruel summer
+            <br>With you
+            <br>I'm drunk in the back of the car
+            <br>And I cried like a baby coming home from the bar (oh)
+            <br>Said, "I'm fine, " but it wasn't true
+            <br>I don't wanna keep secrets just to keep you
+            <br>And I snuck in through the garden gate
+            <br>Every night that summer just to seal my fate (oh)
+            <br>And I screamed for whatever it's worth
+            <br>"I love you, " ain't that the worst thing you ever heard?
+            <br>(Yeah, yeah, yeah, yeah)
+        </span>
+    </div>
+    <hr>
+
+    <h2>背景</h2>
+    <div class="background">
+        <span>
+            泰勒絲將其稱為「夏日浪漫」的歌曲，〈慘痛夏日〉看到泰勒絲描述了一種不確定的浪漫關係，其中充滿了痛苦和絕望。這首歌描繪了被公眾關注下的流行巨星所面臨的挑戰，歌詞的脆弱性使它被與泰勒絲的2017年專輯《舉世盛名》中的第五首曲目〈不堪一擊〉比較。在泰勒絲舉辦的一系列「《情人》專輯秘密試聽會」的活動中，她解釋說：
+
+            <i>這首歌是我寫的關於夏日浪漫感的歌曲，而且夏天浪漫的感覺多久可以被所有這些感覺一層一層地包圍，就像憔悴有時甚至是隱私的。它處理的是在一段關係中存在絕望和痛苦的關係，你渴望的是你還沒有的東西，它就在那裡，而你就像，沒辦法達到它。</i> ——泰勒絲，
+            「泰勒絲在專輯秘密試聽會中分享《情人》的歌曲細節故事」，iHeart〈慘痛夏日〉被描述為夢幻、憂鬱、合成器流行和工業流行歌曲，帶有帶有「咆哮」的橋，由脈動及拍子強烈組成的「合成器漩渦」和失真的人聲效果驅動。這首歌是由泰勒絲、傑克·安多夫及安妮·克拉克共同創作，並由泰勒絲及安東諾夫共同製作。克拉克在歌曲的製作過程中演奏了吉他。
+        </span>
+    </div>
+
+
+</body>
+
+</html>

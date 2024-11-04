@@ -12,20 +12,43 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            
         }
 
-        #head,#main,#arm,#left,#right{
+        #main,#arm,#left,#right{
             border: 1px solid black;
             border-radius: 10px;
         }
 
         #head{
-            text-align: center;
             margin:auto;
             background-color: red;
             width: 80px;
             height: 80px;
+            border-radius: 50%;
+        }
+
+        .eyes{
+            background-color: black;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+
+        .left{
+            margin-left: 40px;
+        }
+        
+        .right{
+            margin-right: 40px;
+        }
+
+        .mouth{
+            background-color: white;
+            width: 50px;
+            height: 10px;
+            border-radius: 30%;
+            margin-bottom: auto 20px;
         }
 
         #body{
@@ -34,7 +57,6 @@
 
         #main{
             display: flex;
-            text-align: center;
             margin:auto;
             background-color: green;
             width: 200px;
@@ -43,15 +65,18 @@
 
         #arm{
             display: flex;
-            text-align: center;
             margin:20px 0px;
             background-color: grey;
             width: 30px;
             height: 200px;
         }
 
+        #wave{
+            transform: rotate(30deg);
+            display: inline-block;
+        }
+
         #feet{
-            text-align: center;
             margin:auto;
             table-layout: fixed;
             width: 150px;
@@ -74,22 +99,26 @@
 
     <div class="all">
         <!-- 頭 -->
-        <div id="head"> red head </div>
+        <div id="head">
+            <div class="left eyes"></div>
+            <div class="right eyes"></div>
+            <div class="mouth"></div>
+        </div>
         <!-- 身體 -->
         <div id="body">
-            <div id="arm">arm</div>
-            <div id="main">green body</div>
-            <div id="arm">arm</div>
+            <div id="arm"></div>
+            <div id="main"></div>
+            <div id="arm wave"></div>
         </div>
         <!-- 腳 -->
         <div>
             <table id="feet">
                 <tr>
                     <!-- 左腳 -->
-                    <td id="left">left blue</td>
+                    <td id="left"></td>
                     <td></td>
                     <!-- 右腳 -->
-                    <td id="right">right yellow</td>
+                    <td id="right"></td>
                 </tr>
             </table>
         </div>

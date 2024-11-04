@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background</title>
+    <style> 
+        *{
+            box-sizing: border-box;
+        }
+
+        table{
+            margin: auto;
+            background-color: lightgray;
+        }
+        .box{
+            background-image: url('./images/bg.png');
+            width: 142px;
+            height: 210px;
+            background-color: lightblue;
+        }
+
+        .top1{
+            background-position: 0% 0%;
+        }
+        .top2{
+            background-position: 25% 0%;
+        }
+        .top3{
+            background-position: 49.5% 0%;
+        }
+        .top4{
+            background-position: 74.2% 0%;
+        }
+        .top5{
+            background-position: 98.55% 0%;
+        }
+        .bot1{
+            background-position: 0% 99%;
+        }
+        .bot2{
+            background-position: 25% 99%;
+        }
+        .bot3{
+            background-position: 49.5% 98.7%;
+        }
+        .bot4{
+            background-position: 74.2% 99%;
+        }
+        .bot5{
+            background-position: 98.55% 99%;
+        }
+    </style>
+</head>
+<body>
+    <!-- img -->
+    <table class="table">
+        <tr>
+            <td><div class="box top1"></div></td>
+            <td><div class="box top2"></div></td>
+            <td><div class="box top3"></div></td>
+            <td><div class="box top4"></div></td>
+            <td><div class="box top5"></div></td>
+            
+        </tr>
+        <tr>
+            <td><div class="box bot1"></div></td>
+            <td><div class="box bot2"></div></td>
+            <td><div class="box bot3"></div></td>
+            <td><div class="box bot4"></div></td>
+            <td><div class="box bot5"></div></td>
+        </tr>
+    </table>
+</body>
+</html>

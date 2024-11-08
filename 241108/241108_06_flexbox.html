@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            /* 設定成flexbox */
+            display: flex;
+            /* 直的 - hard rare 直的選單可能會用到 */
+            /* flex-direction: column; */
+            /* 會自動掉下去 不設置的話會壓縮*/
+            flex-wrap: wrap;
+            margin: auto;
+            text-align: center;
+            width: 80%;
+            height: 50vh;
+            background-color: lightblue;
+        }
+
+        .item{
+            margin-left: 20px;
+            margin-bottom: 20px;
+            width: 250px;
+            height: 250px;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>

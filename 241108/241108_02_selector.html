@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector 2</title>
+    <style>
+        /* 後代的下一層：在 div 下面 "一層" 的 p */
+        div>p {
+            background-color: yellow;
+        }
+        /* 後代選擇全部**少用**：在 div 下面 "所有" 的 p */
+        div p {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h3>CSS Selectors</h3>
+    <hr>
+    <h3>Child selectors</h3>
+    <!-- id -->
+     
+    <!-- w3 -->
+     <div>
+        <p>p1 in div Lorem ipsum dolor sit amet.
+            <p style="background-color: aqua;">p1.1 in div+p "inline style" Lorem ipsum dolor sit amet.</p>
+        </p>
+        <p>p2 in div Lorem ipsum dolor sit amet.</p>
+        <main>
+            <p>p3 in div+main Lorem ipsum dolor sit amet.</p>
+        </main>
+    </div>
+     <p>p4 parallel to div Lorem ipsum dolor sit amet.</p>
+</body>
+</html>

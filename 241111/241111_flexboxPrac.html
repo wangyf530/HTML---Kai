@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=`">
+    <title>Flexbox practice</title>
+    <style>
+        /*  */
+        .container{
+            width: 80%;
+            min-width: 500px;
+            height: 80vh;
+            
+            background-color: lightblue;
+            margin: auto;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        /* 所有圖片的共同設定 */
+        .item{
+
+            background-size: 350%; 
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-size: contain;
+        }
+
+        /* add piv for each item */
+        .first{
+            background-image: url('https://i.pinimg.com/564x/b1/7b/33/b17b33503074ff399c21565ce25ec123.jpg');
+        }
+        .second{
+            background-image: url('https://i.pinimg.com/564x/2e/d2/34/2ed23420ad35a30ec37db01bc38d606c.jpg');
+        }
+        .third{
+            background-image: url('https://i.pinimg.com/564x/c8/e9/7d/c8e97d0409eb16d8e6e9ab87442b522a.jpg');
+        }
+        .fourth{
+            background-image: url('https://i.pinimg.com/564x/1f/79/c4/1f79c436087efc1f18dcab8d11d0ba1e.jpg');
+        }
+        .fifth{
+            background-image: url('https://i.pinimg.com/564x/91/5d/44/915d447a70cfa93869bcbf8c6443741b.jpg');
+        }
+        .sixth{
+            background-image: url('https://i.pinimg.com/564x/a6/a6/41/a6a6418339250b5d852add27e8de2e59.jpg');
+        }
+        .seventh{
+            background-image: url('https://i.pinimg.com/564x/91/a3/da/91a3da3adfdb6e05caf0a81b22ed287b.jpg');
+        }
+        .eighth{
+            background-image: url('https://i.pinimg.com/564x/4c/8b/6b/4c8b6b08d46210f2f7952966e0bb7ae3.jpg');
+        }
+        .ninth{
+            background-image: url('https://i.pinimg.com/564x/b3/2a/c0/b32ac0cb70aa53d0a59b45cf753cffa4.jpg');
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item first">1</div>
+        <div class="item second">2</div>
+        <div class="item third">3</div>
+        <div class="item fourth">4</div>
+        <div class="item fifth">5</div>
+        <div class="item sixth">6</div>
+        <div class="item seventh">7</div>
+        <div class="item eighth">8</div>
+        <div class="item ninth">9</div>
+    </div>
+</body>
+</html>

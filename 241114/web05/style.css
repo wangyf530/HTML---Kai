@@ -114,6 +114,10 @@ main{
     border-top: 0px;
 }
 
+iframe{
+    margin: 0px auto;
+}
+
 /* footer */
 footer{
     width: 1024px;

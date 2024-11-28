@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color: blue;
+            text-align: center;
+        }
+
+        #box{
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box"></div>
+    
+    <script>
+        // 很重要 = print_r();
+        console.log('Hello Javascipt');
+
+        // let(higher priority) - cannot be redeclare, can be reassigned
+        let name = 'a-kai';
+        console.log(`Hi, I'm ${name}.`);
+
+        // const - cannot be redeclare, cannot be reassigned
+        const mobile = '0911-111-111';
+        console.log(`mobile: ${mobile}`);
+    
+        const bonus = 1.5;
+
+
+        //js array
+        // index array
+        myArr = [1,2,3];
+        console.log('myArr', myArr);
+
+        // associated array - object
+        myObj = {
+            's1' : 'Amy',
+            's2' : 'Bob',
+            's3' : 'Cole'
+        };
+        console.log('myObj', myObj);
+    </script>
+</body>
+</html>

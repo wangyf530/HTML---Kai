@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    overflow: hidden;
+    /* overflow: hidden; */
     margin: auto;
     /* padding: 5px; */
     font-family: 標楷體;
@@ -31,7 +31,7 @@ header{
 /* container-left */
 .aside-header{
     width: 215px;
-    height: calc(768px - 65px - 20px);
+    height: calc(768px - 65px - 20px - 25px);
     border: 2px solid grey;
     border-right: 0px;
     display: flex;
@@ -84,7 +84,9 @@ header{
     /* background-color: coral; */
     text-align: center;
     font-size: 16px;
-    border-top: 2px solid grey;
+    border: 2px solid grey;
+    border-right:0px;
+    border-top:0px;
     padding: 3px;
 }
 

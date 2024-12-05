@@ -8,12 +8,15 @@
 </head>
 
 <body>
-
+    HTML ajax
+    <!-- 
     <form action="url" method="get">
         <input type="text" name="name" id="">
         <input type="text" name="mobile" id="">
 
     </form>
+    <button type="button" id="myBtn">myBtn</button> 
+    -->
 
 
 
@@ -22,19 +25,25 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         $(document).ready(function () {
+            // 1.bind
+            const myBtn = $('#myBtn');
+
+            // 2. action
+            myBtn.click(function(e){
+                alert('myBtn ok');
+            });
+
+            // ajax            
             $.ajax({
                 type: "method",
                 url:"url",
                 // data: "data",
                 // dataType: "dataType",
                 success: function(response){
-            }
-    });
-
-
+                
+                }
+            });
         });
-
-            // ajax
     
     </script>
 </body>

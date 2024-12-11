@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="slideUp">slideUp</button>
+    <button id="slideDown">slideDown</button>
+    <button id="slideToggle">slideToggle</button>
+    <div id="box"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // 1.bind
+            const slideUp = $('slideUp');
+            const slideDown = $('slideDown');
+            const slideToggle = $('slideToggle');
+            const box = $('#box');
+
+            // 2. action
+            slideUp.click(function(e){
+                console.log('slideUp');
+                box.slideup();
+            });
+
+
+            slideDown.click(function(e){
+                console.log('slideDown');
+                box.slideDown();
+            });
+
+            slideToggle.click(function(e){
+                box.slideToggle();
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>

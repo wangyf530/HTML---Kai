@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="fadeIn">Fade In</button>
+    <button id="fadeOut">Fade Out</button>
+    <button id="toggle">Toggle</button>
+    <div id="box">
+        <img src="https://picsum.photos/id/1025/600/400" alt="">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // box.hide();
+            // box.show(3000);
+
+            // 1.bind
+            const fadeIn = $('#fadeIn');
+            const fadeOut = $('#fadeOut');
+            const toggle = $('#toggle');
+            const box = $('#box');
+
+            box.hide();
+            box.fadeIn(3000);
+            // 2. action
+            fadeIn.click(function(e){
+                console.log('fade in ok');
+                box.fadeIn();
+            });
+
+
+            fadeOut.click(function(e){
+                console.log('fade out ok');
+                box.fadeOut();
+            });
+
+            toggle.click(function(e){
+                box.fadeToggle(3000);
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>

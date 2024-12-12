@@ -8,6 +8,7 @@
     <style>
         *{
             border-collapse: collapse;
+            width: 100%;
         }
         td,th{
             border: 1px solid black;
@@ -17,6 +18,11 @@
 
         tr:nth-child(even){
             background-color: silver;
+        }
+
+        .text-red{
+            color: red;
+            font-size: 30px;
         }
     </style>
 </head>
@@ -28,13 +34,13 @@
     <table>
         <tr>
             <th width="15%">pic</th>
-            <th width="10%">desc</th>
-            <th width="10%">num</th>
+            <th width="15%">desc</th>
+            <th width="15%">num</th>
             <th>total</th>
         </tr>
         <tr>
             <td>
-                <img src="https://picsum.photos/id/1060/240/160" alt="">
+                <img src="https://picsum.photos/id/431/240/160" alt="">
             </td>
             <td>
                 <p>茶</p>
@@ -53,23 +59,86 @@
                 <img src="https://picsum.photos/id/30/240/160" alt="">
             </td>
             <td>
-                <p>咖啡</p>
-                <p>230元</p>
+                <p>茶</p>
+                <p id="price2" data-price="150">150元</p>
             </td>
             <td>
-                <input type="number" name="" id="amount2" value="0" max="10" min="0">
+                <input type="number" name="" id="input2" value="0" max="10" min="0">
             </td>
             <td>
-                <p>200 元</p>
+                <span id="total2">0</span>
+                <span>元</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="https://picsum.photos/id/1080/240/160" alt="">
+            </td>
+            <td>
+                <p>水果茶</p>
+                <p id="price3" data-price="250">250元</p>
+            </td>
+            <td>
+                <input type="number" name="" id="input3" value="0" max="10" min="0">
+            </td>
+            <td>
+                <span id="total3">0</span>
+                <span>元</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" style="text-align: right;padding-right: 50px;">
+                <span>
+                    總共金額為：
+                </span>
+                <span id="sumResult">
+                    0 元
+                </span>
             </td>
         </tr>
     </table>
+    <hr>
+    
     <script>
         $(document).ready(function () {
+            // function
+            // get all result => sum
+            function getSum(){
+                let getTotal1Value = Number(total1.text());
+                let getTotal2Value = Number(total2.text());
+                let getTotal3Value = Number(total3.text());
+
+                console.log('getTotal1Value',getTotal1Value);
+                console.log('getTotal2Value',getTotal2Value);
+                console.log('getTotal3Value',getTotal3Value);
+                
+
+                if(sum>=200){
+                    sum = sum * 0.8;
+                    sumResult.attr('class','text-red');
+                } else {
+                    sumResult.attr('class','');
+                }
+                let resultString = `${sum} 元`;
+                sumResult.text(resultString);
+            }
+
             // 1. bind
             const price1 = $('#price1');
             const input1 = $('#input1');
             const total1 = $('#total1');
+
+            const price2 = $('#price2');
+            const input2 = $('#input2');
+            const total2 = $('#total2');
+
+            const price3 = $('#price3');
+            const input3 = $('#input3');
+            const total3 = $('#total3');
+
+            const sumResult = $('#sumResult');
+            let sum = 0;
 
             // 2. action
             input1.click(function(e){
@@ -83,9 +152,52 @@
                 console.log(result1);
                 total1.text(result1);
 
+                /* sum += result1;
+                console.log('sum',sum);
+                let resultString=`總共金額為 ${sum} 元`;
+                sumResult.text(resultString); */
+                getSum();
+
             });
 
+            input2.click(function(e){
+                console.log("change ok");
+                // let getPrice1Value = price1.data('price');
+                let getPrice2Value = Number(price2.attr('data-price'));
+                console.log(getPrice2Value);
+                let getInput2Value = Number(input2.val());
+                console.log(getInput2Value);
+                let result2 = getPrice2Value * getInput2Value;
+                console.log(result2);
+                total2.text(result2);
 
+                /* sum += result2;
+                console.log('sum',sum);
+                let resultString=`總共金額為 ${sum} 元`;
+                sumResult.text(resultString); */
+
+                getSum();
+
+            });
+
+            input3.click(function(e){
+                console.log("change ok");
+                // let getPrice1Value = price1.data('price');
+                let getPrice3Value = Number(price3.attr('data-price'));
+                console.log(getPrice3Value);
+                let getInput3Value = Number(input3.val());
+                console.log(getInput3Value);
+                let result3 = getPrice3Value * getInput3Value;
+                console.log(result3);
+                total3.text(result3);
+
+                /* sum += result3;
+                console.log('sum',sum);
+                let resultString=`總共金額為 ${sum} 元`;
+                sumResult.text(resultString); */
+
+                getSum();
+            });
         });
     </script>
 </body>

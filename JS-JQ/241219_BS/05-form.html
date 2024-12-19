@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR FORM</title>
+    <!-- link css 順序 1.bs / 2. self  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            fieldset{
+                background-color: antiquewhite;
+            }
+        </style>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <h2 class="text-center bg-primary text-light">Form</h2>
+        <fieldset class="border p-3 rounded ">
+        <form action="/action_page.php">
+            <div class="row">
+                <div class="col">
+                    <label for="firstName" class="form-label">First Name:</label>
+                    <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name">
+                </div>
+                <div class="col">
+                    <label for="lastName" class="form-label">Last Name:</label>
+                    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <div> Gender: &nbsp</div>
+                    <div class="col form-check-inline mt-3">
+                        <input type="radio" class="form-check-input" name="optradio" id="radio1" value="Male">
+                        Male
+                        <label for="radio1" class="form-check-label"></label>
+
+                        <input type="radio" class="form-check-input" name="optradio" id="radio2" value="Female">
+                        Female
+                        <label for="radio2" class="form-check-label"></label>
+
+                        <input type="radio" class="form-check-input" name="optradio" id="radio3" value="otehrs">
+                        Others
+                        <label for="radio3" class="form-check-label"></label>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label for="birth" class="form-label">Birth Date:</label>
+                    <input type="date" class="form-control" name="birth" id="birth">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <label for="mobile">Mobile Number:</label>
+                    <input type="text" class="form-control" id="mobile" placeholder="0912-345-678" name="mobile">
+                </div>
+                <div class="col">
+                    <label for="address">E-mail Address:</label>
+                    <input type="email" class="form-control" id="address" placeholder="Enter address" name="address">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col form-check-inline">
+                    <div class="mb-2"> Skills you have: </div>
+                    <input type="checkbox" class="form-chekc-input" id="check1" name="html" value="html">
+                    <label for="check1" class="form-check-label">HTML</label>
+                    <input type="checkbox" class="form-chekc-input ms-2" id="check2" name="java" value="java">
+                    <label for="check2" class="form-check-label">Java</label>
+                    <input type="checkbox" class="form-chekc-input ms-2" id="check3" name="excel" value="excel">
+                    <label for="check3" class="form-check-label">Excel</label>
+                    <input type="checkbox" class="form-chekc-input ms-2" id="check4" name="php" value="php">
+                    <label for="check4" class="form-check-label">PHP</label>
+                    <input type="checkbox" class="form-chekc-input ms-2" id="check5" name="mysql" value="mysql">
+                    <label for="check5" class="form-check-label">MySQL</label>
+                    <input type="checkbox" class="form-chekc-input ms-2" id="check6" name="photoshop" value="photoshop">
+                    <label for="check6" class="form-check-label">Photoshop</label>
+                    <input type="checkbox" class="form-chekc-input ms-2" id="check7" name="illustrator" value="illustrator">
+                    <label for="check7" class="form-check-label">Illustrator</label>
+
+                    <label for="otherSkill" class="ms-2">Others:</label>
+                    <input type="text" class="form-control-inline ms-1" id="otherSkill" name="otherSkill">
+
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                    <label for="resume" class="form-label"> Resume: </label>
+                    <input type="file" class="form-control" id="resume" required>
+                </div>
+                <div class="col">
+                    <label for="coverLetter" class="form-label"> Cover Letter: </label>
+                    <input type="file" class="form-control" id="coverLetter" required>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                    <label for="salary" class="form-label">Desire salary per month:</label>
+                    <input type="range" class="form-range" min="30000" max="100000" step="1000" id="salary"
+                        value="30000" oninput="this.nextElementSibling.value = this.value">
+                    <output>300000</output>
+                </div>
+                <div class="col">
+                    <label for="workDate" class="form-label">Earliest date for work:</label>
+                    <input type="date" class="form-control" name="workDate" id="workDate">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <label for="CV" class="form-label">More to say:</label>
+                <textarea class="form-control" id="comment" name="text"
+                    placeholder="Tell us anything you want to share!" cols="50" rows="10"></textarea>
+            </div>
+            <div class="form-check mt-3 text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </fieldset>
+    </div>
+
+    <!-- js include 順序 1. bs / 2. jq / 3. self -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+        </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    <script>
+        $(document).ready(function () {
+
+
+
+        });
+    </script>
+</body>
+
+</html>

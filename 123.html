@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 文字樣式 */
+        .highlight-hover {
+            display: inline-block;
+            position: relative;
+        }
+
+        /* 默認狀態下沒有下劃線 */
+        .highlight-hover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 8px;  /* 螢光筆的粗度 */
+            background-color: rgba(255, 255, 0, 0.8); /* 螢光筆顏色，這裡選用螢光黃 */
+            transition: width 0.3s ease, left 0.3s ease;
+            z-index: -100;
+        }
+
+        /* 滑鼠游標進入時，橫條從中間延伸出來 */
+        .highlight-hover:hover::after {
+            width: 100%;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <p><span class="highlight-hover">這是一段示範文字</span>，當你把滑鼠游標移到上面時，下面會顯示像螢光筆一樣的粗橫條。</p>
+</body>
+</html>

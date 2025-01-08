@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <script>
+        // chanllenge
+        let salary = [10000, 20000, 30000, 40000, 50000];
+        console.log('salary', salary);
+
+        // 1. increase salary 10%
+        // 2. if salary more than 30000, add bonus 5000
+        // 3. how much to pay for salary?
+
+        let final = [];
+        final = salary.map(function (value) {
+            if ((value *1.1)<30000) {
+                value = value*1.1;
+            }else {
+                value = (value*1.1) + 5000;
+            }
+            return parseInt(value);
+        });
+        console.log('final', final);
+
+        let total = final.reduce(function (total, value) {
+            return total + value;
+        });
+        console.log('total', total);
+
+        console.log('- original method - ');
+        
+        let addSalary = [];
+        let bonusSalary = [];
+        let sum = 0;
+        // 1. increase salary 10%
+        // 2. if salary more than 30000, add bonus 5000
+        // 3. how much to pay for salary?
+
+        salary.forEach(function (value){
+            let tmp = parseInt(value * 1.1);
+            addSalary.push(tmp);
+        });
+        console.log('salary',salary);
+        console.log('addSalary',addSalary);
+        
+        addSalary.forEach(function (value){
+            let tmp = value;
+            if (value > 30000){
+                tmp = value + 5000;
+            }
+            bonusSalary.push(tmp);
+        })
+        console.log('bonusSalary',bonusSalary);
+        
+        bonusSalary.forEach(function (value) {
+            sum += value;
+        })
+        console.log('sum',sum);
+        
+        console.log('- js method -');
+        
+        addSalary = salary.map(function (value){
+            return parseInt(value * 1.1);
+        });
+        console.log('addSalary',addSalary);
+        
+        bonusSalary = addSalary.map(function (value){
+            if (value > 30000) {
+                return value + 5000;
+            } else {
+                return value;
+            }
+        });
+        console.log('bonusSalary',bonusSalary);
+        
+        bonusSalary.forEach(function (value){
+            sum += value;
+        });
+        console.log('sum', sum);
+        
+
+        
+    </script>
+</body>
+
+</html>

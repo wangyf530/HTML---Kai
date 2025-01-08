@@ -13,21 +13,26 @@
 
 <body>
     <div class="container mt-3">
-        <h2>Hover Rows</h2>
+        <h2 class="text-danger">Hover Rows</h2>
         <p>The .table-hover class enables a hover state (grey background on mouse over) on table rows:</p>
         <table class="table table-hover">
-            <thead>
+            <thead >
                 <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Email</th>
+                    <th class="bg-success">id</th>
+                    <th class="bg-success">pic</th>
+                    <th class="bg-success">desc</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>John</td>
                     <td>Doe</td>
-                    <td>john@example.com</td>
+                    <td>
+                        <p>john@example.com</p>
+                        <p>john@example.com</p>
+                        <p>john@example.com</p>
+                        <p>john@example.com</p>
+                    </td>
                 </tr>
                 <tr>
                     <td>Mary</td>
@@ -61,7 +66,7 @@
             td.hover(function () {
                     console.log('hover in');
                     // $(this).text('ok');
-                    $(this).attr('class','text-danger');
+                    $(this).attr('class','text-danger fs-5');
                        
                 }, function () {
                     console.log('hover out');

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <script>
+        let myArr = [1, 2, 3, 4, 5];
+        let newArr = [];
+        let sum = 100;
+        console.log('myArr', myArr);
+        // element / value
+        // js method
+        myArr.forEach(function (value) {
+            console.log('value', value);
+            let tmp = value * 2;
+            newArr.push(tmp);
+        });
+        console.log('myArr', myArr);
+        console.log('newArr', newArr);
+
+        // js method/filter
+        myArr.forEach(function (value) {
+            if (value > 3) {
+                newArr.push(value);
+            }
+        });
+
+        let mapArr = myArr.map(function (value) {
+            return value * 2;
+        });
+        console.log('mapArr', mapArr);
+
+        let filterArr = myArr.filter(function (value) {
+            return value > 3;
+        });
+        console.log('filterArr', filterArr);
+
+        const numbers = [45, 4, 9, 16, 25];
+        let sumReduce = numbers.reduce(function (total, value){
+            return total+value;
+        }, 100);
+        console.log('sumReduce',sumReduce);
+        
+
+        // jquery method
+        /**$.each(collection, function (indexInArray, valueOfElement) {
+
+        });
+
+        // jquery method
+        $(selector).each(function (index, element) {
+            // element == this
+        });
+**/
+
+        // chanllenge
+        let salary = [10000, 20000, 30000, 40000, 50000];
+        console.log('salary',salary);
+        
+        // 1. increase salary 10%
+        // 2. if salary more than 30000, add bonus 5000
+        // 3. how much to pay for salary?
+
+        let final = [];
+        salary.forEach(function (value) {
+            let tmp = value * 1.1;
+            if (tmp > 30000) {
+                tmp += 5000;
+            }
+            final.push(tmp);
+        });
+        console.log('final',final);
+        
+        let total = final.reduce(function (total, value){
+            return total+value;
+        });
+        console.log('total',total);
+    </script>
+</body>
+
+</html>

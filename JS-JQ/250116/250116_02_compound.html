@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link css 順序 1.bs / 2. self  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- js include 順序 1. bs / 2. jq / 3. self -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+        </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    <div class="container mt-3">
+        <table id="interestTable" class="table table-bordered text-center">
+            <thead>
+                <tr>
+                    <th>年份</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>10</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const myTable = $('#interestTable');
+        const myTbody = myTable.find('tbody');
+        let rate = 1.05;
+        let init = 10;
+        let sum = 0;
+        let tmp = 0;
+        let arr = [];
+
+        function multi(init, rate) {
+
+            for (let i = 1; i <= 5; i++) {
+                arr = [];
+                init = 10 + tmp;
+                sum = 0;
+                myTbody.append(`<tr>`);
+                arr.push(`第${i}年`);
+                for (let j = 1; j <= 10; j++) {
+                    if (j < i) {
+                        arr.push(`<td></td>`);
+                    } else {
+                        if (j == i) {
+                            sum = init;
+                        } else {
+                            sum = Number(sum * rate);
+                            if (i == j - 1) {
+                                tmp = sum;
+                            }
+                        }
+                        arr.push(`<td>${sum.toFixed(2)}</td>`);
+                    }
+                    // console.log(`第${j}年 => ${sum}`);
+                    // console.log('sum',sum);
+                    // console.log('rate',rate);
+                    // console.log('tmp',tmp);
+                }
+                myTbody.append(arr);
+                myTbody.append(`</tr>`);
+            }
+        }
+        multi(init, rate);
+
+        $(document).ready(function () {
+            const myTable = $('#interestTable');
+            const myTbody = myTable.find('tbody');
+
+            let init = 10;
+            let rate = 1.05;
+            let sum = 0;
+            let myArr = [];
+
+
+        });
+
+
+    </script>
+</body>
+
+</html>

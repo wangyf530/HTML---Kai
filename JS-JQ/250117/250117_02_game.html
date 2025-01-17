@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link css 順序 1.bs / 2. self  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            /* margin: auto; */
+            height: 50vh;
+            /* min-width:200px;
+            max-width:500px; */
+            /* background-color: lightblue; */
+            border: 5px double grey;
+            border-radius: 10px;
+        }
+
+        .timer,
+        .highestScore,
+        .currentScore {
+            width: 55%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="text-center mt-5">投籃大賽</h3>
+        <hr>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-2">
+                <img src="https://i.pinimg.com/736x/62/17/1c/62171cea1b7acf3d2b6c115b3992ff69.jpg" alt=""
+                    class="img-fluid">
+            </div>
+            <!-- main content -->
+            <div class="box col-8 p-3">
+                <div style="display:flex;">
+
+                    <div class="text-center text-primary timer">
+                        剩餘秒數<br>
+                        <p id="timer"></p>
+                    </div>
+                    <div class="text-center text-success highestScore">歷史最高分數 <br>
+                        <p id="highestScore"></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center text-danger currentScore m-auto fs-2">
+                    當前分數<br>
+                    <p id="currentScore"></p>
+                </div>
+
+            </div>
+            <div class="col-2">
+                <img src="https://i.pinimg.com/736x/cb/61/09/cb610912501f7fdba542ef1f62c19c00.jpg" alt=""
+                    class="img-fluid">
+            </div>
+
+            <div class="container text-center mt-3">
+                <button type='button' class="btn btn-dark" id="startBtn">開始</button>
+                <button type='button' class="btn btn-dark text-light" id="scoreBtn">投球</button>
+                <button type='button' class="btn btn-danger text-light ms-5" id="resetBtn">重置</button>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- js include 順序 1. bs / 2. jq / 3. self -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    <script>
+        $(document).ready(function () {
+            const timer = $('#timer');
+            const highestScore = $("#highestScore");
+            const currentScore = $("#currentScore");
+            const startBtn = $("#startBtn");
+            const scoreBtn = $("#scoreBtn");
+            const resetBtn = $("#resetBtn");
+
+            // 當前分數
+            let scoreVar = 0;
+            // 最高分數
+            let highestVar = 0;
+            // 時間
+            let timeVar = 4;
+            let tmpTime;
+            // 判定遊戲
+            let gameFlag = true;
+
+            timer.text(timeVar);
+            highestScore.text(highestVar);
+            currentScore.text(scoreVar);
+
+            scoreBtn.hide();
+
+            startBtn.on("click", function (e) {
+                if (gameFlag == false) {
+                    console.log('gameFlag', gameFlag);
+                    return false;
+                }
+                // 把開始隱藏 變成投球
+                startBtn.hide();
+                scoreBtn.show();
+
+                console.log('startBtn ok');
+
+                // timer -1/sec
+                const myInterval = setInterval(myTimer, 1000);
+                tmpTime = timeVar;
+                function myTimer() {
+                    tmpTime--;
+                    // 到計時0 遊戲結束
+                    if (tmpTime < 0) {
+                        gameFlag == false;
+                        clearInterval(myInterval);
+                        // startBtn.show();
+                        // scoreBtn.hide();
+                    } else {
+                        timer.text(tmpTime);
+                    }
+                }
+
+                function myStop() {
+                    clearInterval(myInterval);
+                }
+
+            })
+
+            scoreBtn.on("click", function () {
+                console.log('scoreBtn ok');
+                console.log('gameflag', gameFlag);
+
+                if (gameFlag == false) {
+                    console.log('gameFlag', gameFlag);
+                    return flase;
+                } else if (tmpTime > timeVar / 2) {
+                    scoreVar += 2;
+                } else if (tmpTime > 0) {
+                    scoreVar += 3;
+                }
+                if (scoreVar > highestScore) {
+                    highestVar = scoreVar
+                    highestScore.text(highestVar);
+                }
+                currentScore.text(scoreVar);
+            })
+
+            resetBtn.on("click", function () {
+                console.log('resetBtn ok');
+                scoreVar = 0
+                timeVar = 0
+                gameFlag = true;
+                currentScore.text(scoreVar);
+
+            })
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            height: 50vh;
+            border: 5px double grey;
+            border-radius: 10px;
+        }
+
+        .timer,
+        .highestScore,
+        .currentScore {
+            width: 55%;
+        }
+
+        /* 設定背景是籃框 */
+        .basketball-court {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            max-height: 300px;
+            background-image: url('https://i.pinimg.com/736x/22/41/90/224190be41bdb13bf108e7d19be2fb30.jpg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        /* 籃球設定 */
+        .ballShoot {
+            position: absolute;
+            width: 5vw;
+            height: 5vw;
+            border-radius: 50%;
+            bottom: 5vh;
+            left: -100px;
+            background-image: url('https://i.pinimg.com/736x/85/6a/93/856a93a2c5c83307914fb0b930cd306f.jpg');
+            background-size: cover;
+            background-position: center;
+            display: none;
+        }
+
+        /* 投籃動畫 */
+        @keyframes shot {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+
+            75% {
+                transform: translateX(calc(8vw + 110px)) translateY(calc(-140%));
+                opacity: 1;
+                /* 到達籃框上方 */
+            }
+
+            100% {
+                transform: translateX(calc(8vw + 110px)) translateY(-80%);
+                opacity: 0.5;
+                /* 投籃成功，準備進框 */
+            }
+        }
+
+        .ball-fly {
+            animation: shot 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="text-center mt-4">投籃大賽</h3>
+        <hr>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-4">
+                <div class="basketball-court">
+                    <!-- 篮球场背景 -->
+                </div>
+            </div>
+            <div class="box col-8 p-3">
+                <div style="display:flex;">
+                    <div class="text-center text-primary timer">
+                        剩餘秒數<br>
+                        <p id="timer"></p>
+                    </div>
+                    <div class="text-center text-success highestScore">歷史最高分數 <br>
+                        <p id="highestScore"></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center text-danger currentScore m-auto fs-3">
+                    當前分數<br>
+                    <p id="currentScore"></p>
+                </div>
+
+                <div class="container text-center mt-3">
+                    <button type='button' class="btn btn-dark" id="startBtn">開始</button>
+                    <button type='button' class="btn btn-dark text-light" id="shootBtn">投球</button>
+                    <button type='button' class="btn btn-danger text-light ms-5" id="resetBtn">重置</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(function () {
+            const timer = $('#timer');
+            const highestScore = $("#highestScore");
+            const currentScore = $("#currentScore");
+            const startBtn = $("#startBtn");
+            const shootBtn = $("#shootBtn");
+            const resetBtn = $("#resetBtn");
+            let totalTime = 10;
+            let scoreVar = 0;
+            let highestVar = 0;
+            let timeVar = totalTime;
+            let tmpTime;
+            let gameFlag = true;
+
+            timer.text(timeVar);
+            highestScore.text(highestVar);
+            currentScore.text(scoreVar);
+
+            shootBtn.hide();
+
+            startBtn.on("click", function (e) {
+                if (gameFlag == false) return false;
+
+                startBtn.hide();
+                shootBtn.show();
+
+                const myInterval = setInterval(myTimer, 1000);
+                tmpTime = timeVar;
+
+                function myTimer() {
+                    tmpTime--;
+                    if (tmpTime < 0) {
+                        gameFlag = false;
+                        clearInterval(myInterval);
+                        shootBtn.text('結束');
+                    } else {
+                        timer.text(tmpTime);
+                    }
+                }
+            })
+
+            shootBtn.on("click", function () {
+                if (gameFlag == false) return false;
+
+                if (tmpTime > timeVar / 2) {
+                    scoreVar += 2;
+                } else if (tmpTime > 0) {
+                    scoreVar += 3;
+                } else {
+                    gameFlag = false;
+                }
+
+                // 創建新籃球
+                const ball = $('<div class="ballShoot"></div>');
+
+                // 在籃球場內插入新球
+                $(".basketball-court").append(ball);
+
+                // 顯示球並執行投籃動畫
+                ball.css("display", "block");
+                ball.addClass('ball-fly');
+
+                // 移除已經完成動畫的球
+                setTimeout(() => {
+                    ball.remove();
+                }, 1000); // 動畫結束後，1秒後刪除球
+
+                if (scoreVar > highestVar) {
+                    highestVar = scoreVar
+                    highestScore.text(highestVar);
+                }
+                currentScore.text(scoreVar);
+            })
+
+            resetBtn.on("click", function () {
+                tmpTime = 0;
+                scoreVar = 0;
+                timeVar = totalTime;
+                timer.text(timeVar)
+                gameFlag = true;
+                currentScore.text(scoreVar);
+                startBtn.show();
+                shootBtn.hide();
+                shootBtn.text('投球');
+            })
+        });
+    </script>
+</body>
+
+</html>

@@ -22,9 +22,9 @@
                 <tr>
                     <th>ID</th>
                     <th>NAME</th>
-                    <th>time1</th>
-                    <th>time2</th>
-                    <th>time3</th>
+                    <th id="time1">time1</th>
+                    <th id="time2">time2</th>
+                    <th id="time3">time3</th>
                 </tr>
             </thead>
             <tbody>
@@ -50,7 +50,7 @@
     <script>
         $(document).ready(function () {
             let pwd = pw;
-            console.log('pwd', pwd);
+            // console.log('pwd', pwd);
 
             // 1.bind
             const myTable = $('#myTable');
@@ -72,6 +72,41 @@
                     data = res.records.location;
                     console.log('data', data);
 
+                    // time1
+                    let startTime1 = data[0].weatherElement[0].time[0].startTime;
+                    let start1Date = startTime1.substr(0, 10);
+                    let start1Time = startTime1.substr(11, 2);
+                    let endTime1 = data[0].weatherElement[0].time[0].endTime;
+                    let end1Date = endTime1.substr(0, 10);
+                    let end1Time = endTime1.substr(11, 2);
+                    // time2
+                    let startTime2 = data[0].weatherElement[0].time[1].startTime;
+                    let start2Date = startTime2.substr(0, 10);
+                    let start2Time = startTime2.substr(11, 2);
+                    let endTime2 = data[0].weatherElement[0].time[1].endTime;
+                    let end2Date = endTime2.substr(0, 10);
+                    let end2Time = endTime2.substr(11, 2);
+
+                    // time3
+                    let startTime3 = data[0].weatherElement[0].time[2].startTime;
+                    let start3Date = startTime3.substr(0, 10);
+                    let start3Time = startTime3.substr(11, 2);
+                    let endTime3 = data[0].weatherElement[0].time[2].endTime;
+                    let end3Date = endTime3.substr(0, 10);
+                    let end3Time = endTime3.substr(11, 2);
+
+                    console.log('startTime1', startTime1);
+                    console.log('endTime1', endTime1);
+                    console.log('startTime2', startTime2);
+                    console.log('endTime2', endTime2);
+                    console.log('startTime3', startTime3);
+                    console.log('endTime3', endTime3);
+
+                    time1Text = start1Date + "/" + start1Time + "\n" + end1Date + "/" + end1Time;
+                    $('#time1').text(time1Text);
+                    $('#time2').html(startTime2);
+                    $('#time3').html(startTime3);
+
                     $.each(data, function (key, value) {
                         // console.log('key', key);
                         // console.log('value', value.locationName);
@@ -79,30 +114,48 @@
                         let tmpLocationName = value.locationName;
                         let tmpLocationID = key;
                         let tmpWeatherElement = value.weatherElement;
-                        console.log('tmpWeatherElement', tmpWeatherElement);
-                        
+                        // min temp
+                        let tmpMinTtime0 = tmpWeatherElement[2].time[0].parameter['parameterName'];
+                        let tmpMinTtime1 = tmpWeatherElement[2].time[1].parameter['parameterName'];
+                        let tmpMinTtime2 = tmpWeatherElement[2].time[2].parameter['parameterName'];
+                        // max temp
+                        let tmpMaxTtime0 = tmpWeatherElement[4].time[0].parameter['parameterName'];
+                        let tmpMaxTtime1 = tmpWeatherElement[4].time[1].parameter['parameterName'];
+                        let tmpMaxTtime2 = tmpWeatherElement[4].time[2].parameter['parameterName'];
+
+                        // console.log('tmpMinTtime0',tmpMinTtime0);
+                        // console.log('tmpMinTtime1',tmpMinTtime1);
+                        // console.log('tmpMinTtime2',tmpMinTtime2);
+
+                        // console.log('tmpMaxTtime0',tmpMaxTtime0);
+                        // console.log('tmpMaxTtime1',tmpMaxTtime1);
+                        // console.log('tmpMaxTtime2',tmpMaxTtime2);
+
+                        // console.log('tmpWeatherElement', tmpWeatherElement);
+                        // console.log('tmpWeatherElement[2]', tmpWeatherElement[2]);
+                        // console.log('tmpWeatherElement[2].time[0]', tmpWeatherElement[2].time[0].parameter['parameterName']);
+                        // console.log('tmpWeatherElement[4]', tmpWeatherElement[4]);
+                        // console.log('tmpWeatherElement[4].time[0]', tmpWeatherElement[4].time[0].parameter['parameterName']);
+
+
+
                         // 1.地名
-                        console.log('tmpLocationName', tmpLocationName);
+                        // console.log('tmpLocationName', tmpLocationName);
 
                         // 2.table
                         let temText = `
                             <tr>
                                 <td>${tmpLocationID + 1}</td>
                                 <td>${tmpLocationName}</td>
+                                <td>${tmpMinTtime0} - ${tmpMaxTtime0} °C</td>
+                                <td>${tmpMinTtime1} - ${tmpMaxTtime1} °C</td>
+                                <td>${tmpMinTtime2} - ${tmpMaxTtime2} °C</td>
                             </tr>
                         `;
-
                         $(myTbody).append(temText);
-
                     });
-
-
-
                 }
             });
-
-
-
         });
     </script>
 </body>
